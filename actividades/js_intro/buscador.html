@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscador</title>
+</head>
+<body>
+   <div>
+       <input id="input_pelicula" type="text" placeholder="Ingrese titulo de la pelicula">
+       <button onclick="procesar()" >Buscar</button>
+   </div> 
+
+  <div>
+      <h2 id="title"> </h2>
+      <h4 id="plot"> </h4>
+      <img id="poster" src="" alt="">
+  </div>
+
+   <script type="text/javascript">
+    
+    function procesar() {
+        var titulo = document.getElementById("input_pelicula").value;
+        consultar(titulo);
+    }
+
+   function consultar(title) {
+       var pelicula;
+       var poster = document.getElementById("poster");
+       var titulo = document.getElementById("title");
+       var plot = document.getElementById("plot");
+       var data = null;
+       var xhr = new XMLHttpRequest();
+       
+       xhr.addEventListener("readystatechange", function () {
+           if (this.readyState === 4) {
+               console.log(this.responseText);
+               pelicula = JSON.parse(this.responseText);
+               poster.src = pelicula['Poster'];
+               titulo.innerText = pelicula['Title'];
+               plot.innerText = pelicula['Plot'];
+           }
+       });
+       xhr.open("GET", "http://www.omdbapi.com?apikey=c9875e7b&t="+ title);
+       xhr.send(data);
+   }
+   
+   </script>
+
+
+</body>
+</html>

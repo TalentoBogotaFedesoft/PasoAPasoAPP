@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>   
+</head>
+<body>
+        <div>
+            <input id="input_1" type="number" placeholder="Ingrese número"/>
+        </div>
+
+        <div>
+            <input id="input_2" type="number" placeholder="Ingrese número"/>
+        </div>
+
+        <div> 
+            <button onclick="ejecutar('sumar')">Sumar</button>
+            <button onclick="ejecutar('restar')">Restar</button>
+            <button onclick="ejecutar('mult')">Multiplicar</button>
+            <button onclick="ejecutar('div')">Dividir</button>
+        </div>
+
+        <div id="resultado">
+            
+
+        </div>
+
+
+        <script type="text/javascript">
+            var num1 = document.getElementById('input_1');
+            var num2 = document.getElementById('input_2');
+            var resultado = document.getElementById('resultado');
+    
+            function ejecutar(opcion) {
+
+                var x = parseInt(num1.value);
+                var y = parseInt(num2.value);
+
+                switch (opcion) {
+                    case 'sumar': {
+                        resultado.innerText = 'El resultado es: ' + (x + y);                         
+                        break;
+                    }
+                    case 'restar': {
+                        resultado.innerText = 'El resultado es: ' + (x - y); 
+                        break;
+                    }
+                    case 'mult': {
+                        resultado.innerText = 'El resultado es: ' + (x * y); 
+                        break;
+                    }
+                    case 'div': { 
+                        resultado.innerText = 'El resultado es: ' + (x / y); 
+                        break;
+                    }
+                }
+                
+            }
+    
+    
+            
+        </script>
+    
+</body>
+</html>
