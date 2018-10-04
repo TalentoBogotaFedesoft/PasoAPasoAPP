@@ -1,3 +1,6 @@
 [submodule "actividades/rails/rails_demo"]
 	path = actividades/rails/rails_demo
 	url = https://github.com/anmrdz/rails_demo.git
+[submodule "actividades/rails/rails_bookstore"]
+	path = actividades/rails/rails_bookstore
+	url = https://github.com/anmrdz/rails_bookstore.git
