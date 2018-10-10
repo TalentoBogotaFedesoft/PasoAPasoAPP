@@ -50,7 +50,6 @@ Paso a paso utiliza en su mayor parte tecnologías open source/código abierto p
 
 [//]: # 
     [anmrdz]: <https://github.com/anmrdz/>
-    [git-repo-url]: <>
     [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
     [PostgreSQL]: <https://www.postgresql.org/>
     [Ruby on rails]: <https://rubyonrails.org/>
