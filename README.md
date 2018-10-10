@@ -1,4 +1,4 @@
-
+![logotipo](https://github.com/TalentoBogotaFedesoft/fundacion-futuro-169-biciapp/raw/master/proyecto/prototipo_inicial/logotipo.png)
 
 # Paso a Paso 
 Paso a paso es una aplicación diseñada para cambiar la forma en que te transportas en la ciudad de Bogotá.
@@ -49,11 +49,11 @@ Paso a paso utiliza en su mayor parte tecnologías open source/código abierto p
 
 
 [//]: # 
- [anmrdz]: <https://github.com/anmrdz/>
-   [git-repo-url]: <>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [PostgreSQL]: <https://www.postgresql.org/>
-   [Ruby on rails]: <https://rubyonrails.org/>
-   [Angular]: <https://angular.io/>
-   [Ionic]: <https://ionicframework.com/>
+    [anmrdz]: <https://github.com/anmrdz/>
+    [git-repo-url]: <>
+    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+    [PostgreSQL]: <https://www.postgresql.org/>
+    [Ruby on rails]: <https://rubyonrails.org/>
+    [Angular]: <https://angular.io/>
+    [Ionic]: <https://ionicframework.com/>
 
