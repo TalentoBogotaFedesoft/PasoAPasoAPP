@@ -3,7 +3,7 @@ class CreateRoutes < ActiveRecord::Migration[5.2]
     create_table :routes do |t|
       t.string :name
       t.string :description
-      t.string :code
+      t.string :code, null: false, unique: true
 
       t.timestamps
     end
