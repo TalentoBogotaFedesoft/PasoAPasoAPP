@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  dep_time: 2018-10-11 01:01:13
+
+two:
+  code: MyString
+  dep_time: 2018-10-11 01:01:13
