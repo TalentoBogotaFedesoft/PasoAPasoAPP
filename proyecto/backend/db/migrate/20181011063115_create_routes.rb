@@ -4,7 +4,7 @@ class CreateRoutes < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.string :destination
-      t.string :code, null: false, unique: true
+      t.string :code, null: false
 
       t.timestamps
     end
