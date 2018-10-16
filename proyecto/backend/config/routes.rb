@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     post 'auth_user' => 'user_token#create'
+    post 'auth_admin' => 'admin_token#create'
     namespace :v1 do
       resources :user, only: [:create, :update, :show]
-  #post 'admin_token' => 'admin_token#create'
+      resources :admin, only: [:create, :destroy, :show]
     end
   end
 end
