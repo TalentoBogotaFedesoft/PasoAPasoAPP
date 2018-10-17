@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_043554) do
     t.string "code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_routes_on_code", unique: true
+    t.index ["code"], name: "index_routes_on_code"
   end
 
   create_table "stations", force: :cascade do |t|

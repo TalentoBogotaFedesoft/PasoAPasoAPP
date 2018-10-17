@@ -1,13 +1,9 @@
 class Api::V1::AdminController < ApiController
     before_action :authenticate_admin
     before_action :set_admin
+    before_action :check_role, only:[:create, :destroy]
 
     def create
-        unless @admin.sys_admin?
-            render status: :unauthorized
-            return
-        end
-
         admin_params = params.require(:admin).permit(
             :name, :email, :password, :password_confirmation,
             :personal_id, :role, :entity)
@@ -28,11 +24,6 @@ class Api::V1::AdminController < ApiController
     end
 
     def destroy
-        unless @admin.sys_admin?
-            render status: :unauthorized
-            return
-        end
-
         admin = Admin.find_by personal_id: params[:personal_id]
 
         if admin.delete
@@ -50,6 +41,12 @@ class Api::V1::AdminController < ApiController
         @admin = current_admin
         if @admin.nil?
             render status: :not_found, json:{}
+        end
+    end
+
+    def check_role
+        unless @admin.sys_admin?
+            render status: :unauthorized
         end
     end
 end

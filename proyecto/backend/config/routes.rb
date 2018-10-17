@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :user, only: [:create, :update, :show]
       resources :admin, only: [:create, :destroy, :show]
+      resources :route
     end
   end
 end
