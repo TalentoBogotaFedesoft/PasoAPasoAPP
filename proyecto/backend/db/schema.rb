@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_043554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "route_id"
+    t.index ["code"], name: "index_buses_on_code", unique: true
     t.index ["route_id"], name: "index_buses_on_route_id"
   end
 
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 2018_10_15_043554) do
     t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_stations_on_code", unique: true
   end
 
   create_table "trips", force: :cascade do |t|

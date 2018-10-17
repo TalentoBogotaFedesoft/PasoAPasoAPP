@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :user, only: [:create, :update, :show]
       resources :admin, only: [:create, :destroy, :show]
       resources :route
+      resources :station
     end
   end
 end
