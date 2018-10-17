@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :admin, only: [:create, :destroy, :show]
       resources :route
       resources :station
+      resources :bus
     end
   end
 end
