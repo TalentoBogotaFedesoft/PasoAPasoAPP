@@ -115,13 +115,13 @@ ActiveRecord::Schema.define(version: 2018_10_15_043554) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "alerts", "trips"
-  add_foreign_key "alerts", "users"
-  add_foreign_key "buses", "routes"
-  add_foreign_key "evaluations", "routes"
-  add_foreign_key "evaluations", "users"
-  add_foreign_key "route_stops", "routes"
-  add_foreign_key "route_stops", "stations"
-  add_foreign_key "trips", "routes"
-  add_foreign_key "trips", "users"
+  add_foreign_key "alerts", "trips", on_delete: :cascade
+  add_foreign_key "alerts", "users", on_delete: :cascade
+  add_foreign_key "buses", "routes", on_delete: :nullify
+  add_foreign_key "evaluations", "routes", on_delete: :cascade
+  add_foreign_key "evaluations", "users", on_delete: :cascade
+  add_foreign_key "route_stops", "routes", on_delete: :cascade
+  add_foreign_key "route_stops", "stations", on_delete: :cascade
+  add_foreign_key "trips", "routes", on_delete: :cascade
+  add_foreign_key "trips", "users", on_delete: :cascade
 end
