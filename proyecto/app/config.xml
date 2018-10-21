@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>app</name>
-    <description>An awesome Ionic/Cordova app.</description>
+<widget id="com.anmrdz.pasoapaso" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Paso a Paso</name>
+    <description> Paso a paso es una aplicación diseñada para cambiar la forma en que te transportas en la ciudad de
+        Bogotá.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -27,18 +28,18 @@
         <icon density="xhdpi" src="resources/android/icon/xhdpi.png" />
         <icon density="xxhdpi" src="resources/android/icon/xxhdpi.png" />
         <icon density="xxxhdpi" src="resources/android/icon/xxxhdpi.png" />
-        <splash density="land-ldpi" src="resources/android/splash/splash-land-ldpi.png" />
-        <splash density="land-mdpi" src="resources/android/splash/splash-land-mdpi.png" />
-        <splash density="land-hdpi" src="resources/android/splash/splash-land-hdpi.png" />
-        <splash density="land-xhdpi" src="resources/android/splash/splash-land-xhdpi.png" />
-        <splash density="land-xxhdpi" src="resources/android/splash/splash-land-xxhdpi.png" />
-        <splash density="land-xxxhdpi" src="resources/android/splash/splash-land-xxxhdpi.png" />
-        <splash density="port-ldpi" src="resources/android/splash/splash-port-ldpi.png" />
-        <splash density="port-mdpi" src="resources/android/splash/splash-port-mdpi.png" />
-        <splash density="port-hdpi" src="resources/android/splash/splash-port-hdpi.png" />
-        <splash density="port-xhdpi" src="resources/android/splash/splash-port-xhdpi.png" />
-        <splash density="port-xxhdpi" src="resources/android/splash/splash-port-xxhdpi.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/splash-port-xxxhdpi.png" />
+        <splash density="land-ldpi" src="resources/android/splash/splash-port-ldpi.png" />
+        <splash density="land-mdpi" src="resources/android/splash/splash-port-mdpi.png" />
+        <splash density="land-hdpi" src="resources/android/splash/splash-port-hdpi.png" />
+        <splash density="land-xhdpi" src="resources/android/splash/splash-port-xhdpi.png" />
+        <splash density="land-xxhdpi" src="resources/android/splash/splash-port-xxhdpi.png" />
+        <splash density="land-xxxhdpi" src="resources/android/splash/splash-port-xxxhdpi.png" />
+        <splash density="port-ldpi" src="resources/android/splash/splash-land-ldpi.png" />
+        <splash density="port-mdpi" src="resources/android/splash/splash-land-mdpi.png" />
+        <splash density="port-hdpi" src="resources/android/splash/splash-land-hdpi.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/splash-land-xhdpi.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/splash-land-xxhdpi.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/splash-land-xxxhdpi.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -79,5 +80,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <engine name="android" spec="~7.1.1" />
+    <engine name="android" spec="7.1.1" />
 </widget>

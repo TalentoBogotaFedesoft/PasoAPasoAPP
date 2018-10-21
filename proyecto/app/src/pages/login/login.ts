@@ -3,25 +3,27 @@ import { NavController, NavParams, LoadingController, ToastController } from 'io
 import { ApiProvider } from '../../providers/api/api';
 
 /**
- * Generated class for the LoginAdminPage page.
+ * Generated class for the LoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-login-admin',
-  templateUrl: 'login-admin.html',
+  selector: 'page-login',
+  templateUrl: 'login.html',
 })
-export class LoginAdminPage {
+export class LoginPage {
   public email: string;
   public password: string;
+  public admin: boolean;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public api: ApiProvider,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController) {
+      this.admin = false;
   }
 
   public login(): void {
@@ -33,7 +35,15 @@ export class LoginAdminPage {
       content: 'Cargando...'
     });
     loading.present();
-    this.api.loginAdmin(params).subscribe((status) => {
+
+    let login :any;
+    if (this.admin) {
+      login = this.api.loginAdmin(params);
+    } else {
+      login = this.api.loginUser(params);
+    }
+
+    login.subscribe((status) => {
       loading.dismiss();
       if (status) {
         const toast = this.toastCtrl.create({
