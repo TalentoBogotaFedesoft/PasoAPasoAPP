@@ -1,3 +1,4 @@
+import { RegisterUserPage } from './../pages/register-user/register-user';
 import { AdminDashboardPage } from './../pages/admin-dashboard/admin-dashboard';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,7 +20,8 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     LoginPage,
     MenuPage,
-    AdminDashboardPage
+    AdminDashboardPage,
+    RegisterUserPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { MenuPage } from '../pages/menu/menu';
     HomePage,
     LoginPage,
     MenuPage,
-    AdminDashboardPage
+    AdminDashboardPage,
+    RegisterUserPage
   ],
   providers: [
     StatusBar,

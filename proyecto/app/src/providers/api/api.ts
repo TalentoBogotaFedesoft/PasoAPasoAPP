@@ -4,17 +4,11 @@ import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators';
 import { Observable} from 'rxjs';
 import { flatten } from '@angular/compiler';
-
-enum RoleType {
-  default,
-  user,
-  admin,
-};
+import { RoleType } from '../../app/roleTypeEnum';
 @Injectable()
 export class ApiProvider {
   private url: string;
   private user: Array<any>;
-  public RoleType:RoleType;
   private role: RoleType;
   public token: string;
 
@@ -50,12 +44,27 @@ export class ApiProvider {
     }));
   }
 
-  public getRole(){
+  public registerUser(params): Observable<boolean> {
+    return this.http.post(`${this.url}/v1/user`, {
+      user: params
+    }).pipe(map((response: any) => {
+      return true;
+    }), catchError((error: HttpErrorResponse) => {
+      return Observable.of(false);
+    }))
+  }
+
+  public getRole():RoleType{
     return this.role;
   }
 
   public logout(): void {
+    this.role = RoleType.default;
     this.token = undefined;
+  }
+
+  public isAuth(): boolean {
+    return this.token? true : false;
   }
 
 

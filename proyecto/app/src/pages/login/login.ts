@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
+import { RegisterUserPage } from '../register-user/register-user';
 
 /**
  * Generated class for the LoginPage page.
@@ -36,14 +37,14 @@ export class LoginPage {
     });
     loading.present();
 
-    let login :any;
+    let loginHandle :any;
     if (this.admin) {
-      login = this.api.loginAdmin(params);
+      loginHandle = this.api.loginAdmin(params);
     } else {
-      login = this.api.loginUser(params);
+      loginHandle = this.api.loginUser(params);
     }
 
-    login.subscribe((status) => {
+    loginHandle.subscribe((status) => {
       loading.dismiss();
       if (status) {
         const toast = this.toastCtrl.create({
@@ -60,6 +61,10 @@ export class LoginPage {
         toast.present();
       }
     })
+  }
+
+  public register():void{
+    this.navCtrl.setRoot(RegisterUserPage);
   }
 
 }
