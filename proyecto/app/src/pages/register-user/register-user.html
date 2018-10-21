@@ -1,0 +1,42 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Registrarse</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-item text-center>
+      <img src="assets/imgs/logotipo.png" alt = logo>
+    </ion-item>
+
+    <ion-list no-border>
+        <ion-item>
+            <ion-label stacked >Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="name" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>  <ion-icon name="mail" item-start></ion-icon> Correo</ion-label>
+            <ion-input type="email" [(ngModel)]="email" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked><ion-icon name="lock" item-start></ion-icon>Confirma la contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password_confirmation" required></ion-input>
+        </ion-item>
+
+        <ion-item >
+            <button ion-button  block (click)="register()">Registrarse</button>
+        </ion-item>
+    </ion-list>
+  </ion-content>

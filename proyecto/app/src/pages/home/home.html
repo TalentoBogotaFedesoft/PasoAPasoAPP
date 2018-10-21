@@ -1,14 +1,39 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Paso a paso
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-slides pager>
+
+    <ion-slide>
+      <img src="assets/imgs/logotipo.png" />
+      <h2>Hola!</h2>
+      <p><b> Paso a paso</b> es una aplicación diseñada para cambiar la forma en que te transportas en la ciudad de
+        Bogotá.</p>
+      <button ion-button block>Empezar viaje</button>
+      <button ion-button block>Iniciar sesión</button>
+
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/imgs/map.jpg" />
+      <h2>Ver rutas en tiempo real</h2>
+      <p>Puedes ver en <b>tiempo real</b> en donde se encuentran los <b>buses</b></p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/imgs/paradero.jpg" />
+      <h2>Estimar la hora de llegada del bus</h2>
+      <p><b>Paso a paso</b> te da un aproximación de la hora de llegada del bus al paradero que eligas</p>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
