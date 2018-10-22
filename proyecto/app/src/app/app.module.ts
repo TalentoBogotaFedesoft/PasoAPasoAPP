@@ -12,14 +12,13 @@ import { HomePage } from '../pages/home/home';
 import { ApiProvider } from '../providers/api/api';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuPage } from '../pages/menu/menu';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage,
     AdminDashboardPage,
     RegisterUserPage
   ],
@@ -27,14 +26,14 @@ import { MenuPage } from '../pages/menu/menu';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage,
     AdminDashboardPage,
     RegisterUserPage
   ],
