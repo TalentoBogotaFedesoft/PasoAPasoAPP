@@ -1,3 +1,5 @@
+import { AdminsPage } from './../pages/admins/admins';
+import { AdminDashboardPage } from './../pages/admin-dashboard/admin-dashboard';
 import { HomePage } from './../pages/home/home';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Events, Nav } from 'ionic-angular';
@@ -5,8 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterUserPage } from '../pages/register-user/register-user';
-import { AdminDashboardPage } from '../pages/admin-dashboard/admin-dashboard';
 import { ApiProvider } from '../providers/api/api';
+import { UserDashboardPage } from '../pages/user-dashboard/user-dashboard';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -45,21 +48,21 @@ export class MyApp {
         { title: 'Buses', component: LoginPage, icon: 'bus' },
         { title: 'Rutas', component: LoginPage, icon: 'map' },
         { title: 'Estaciones', component: LoginPage, icon: 'cube' },
-        { title: 'Administradores', component: AdminDashboardPage, icon: 'contacts' },
-        { title: 'Inicio', component: LoginPage, icon: 'home' }
+        { title: 'Administradores', component: AdminsPage, icon: 'contacts' },
+        { title: 'Inicio', component: AdminDashboardPage, icon: 'home' }
       ];
     });
 
     events.subscribe('user:loggedIn', () => {
       this.loggedIn = true;
-      this.nav.setRoot(HomePage);
+      this.nav.setRoot(UserDashboardPage);
 
       this.pages = [
         { title: 'Empezar viaje', component: LoginPage, icon: 'navigate' },
         { title: 'Mis viajes', component: LoginPage, icon: 'map' },
         { title: 'Mis alertas', component: LoginPage, icon: 'alarm' },
         { title: 'Mis evaluaciones', component: LoginPage, icon: 'star' },
-        { title: 'Mi perfil', component: LoginPage, icon: 'contact' }
+        { title: 'Inicio', component: UserDashboardPage, icon: 'home' }
       ];
     });
 

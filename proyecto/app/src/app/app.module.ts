@@ -1,3 +1,5 @@
+import { ProfilePage } from './../pages/profile/profile';
+import { UserDashboardPage } from './../pages/user-dashboard/user-dashboard';
 import { RegisterUserPage } from './../pages/register-user/register-user';
 import { AdminDashboardPage } from './../pages/admin-dashboard/admin-dashboard';
 import { LoginPage } from './../pages/login/login';
@@ -13,6 +15,7 @@ import { ApiProvider } from '../providers/api/api';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { RegisterAdminPage } from '../pages/register-admin/register-admin';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     LoginPage,
     AdminDashboardPage,
-    RegisterUserPage
+    RegisterUserPage,
+    UserDashboardPage,
+    ProfilePage,
+    RegisterAdminPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,10 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     LoginPage,
     AdminDashboardPage,
-    RegisterUserPage
+    RegisterUserPage,
+    UserDashboardPage,
+    ProfilePage,
+    RegisterAdminPage
   ],
   providers: [
     StatusBar,

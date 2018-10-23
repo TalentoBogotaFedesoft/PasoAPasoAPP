@@ -67,6 +67,19 @@ export class ApiProvider {
     }))
   }
 
+  public updateUser(params): Observable<boolean> {
+    return this.http.patch(`${this.url}/v1/user/1`,
+      { user: params }, {
+        headers: {
+          'Authorization': this.currentUser.token
+        }
+      }).pipe(map((response) => {
+        return true;
+      }), catchError((error: HttpErrorResponse) => {
+        return Observable.of(false);
+      }))
+  }
+
   public getRole(): string {
     return this.currentUser.role;
   }
