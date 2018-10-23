@@ -1,16 +1,61 @@
-
 <ion-header>
 
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
-    <ion-title>admin-dashboard</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Panel de Administración</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card >
+
+    <ion-item  color="primary">
+      <ion-avatar item-start>
+        <ion-icon name='construct'></ion-icon>
+      </ion-avatar>
+      <h2>{{name}}</h2>
+      <p>{{email}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <ion-item>
+     <h3>Perfil: {{role}}.</h3>
+    </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Administración
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="bus" item-start></ion-icon>
+        Buses
+      </button>
+
+      <button ion-item>
+        <ion-icon name="map" item-start></ion-icon>
+        Rutas
+      </button>
+
+      <button ion-item>
+        <ion-icon name="cube" item-start></ion-icon>
+        Estaciones
+      </button>
+
+      <button ion-item>
+        <ion-icon name="contacts" item-start></ion-icon>
+        Administradores
+      </button>
+
+    </ion-list>
+  </ion-card>
+
 
 </ion-content>
