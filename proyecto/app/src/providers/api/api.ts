@@ -67,6 +67,19 @@ export class ApiProvider {
     }))
   }
 
+  public registerAdmin(params): Observable<boolean> {
+    return this.http.post(`${this.url}/v1/admin`,
+      { admin: params }, {
+        headers: {
+          'Authorization': this.currentUser.token
+        }
+      }).pipe(map(() => {
+        return true;
+      }), catchError(() => {
+        return Observable.of(false);
+      }))
+  }
+
   public updateUser(params): Observable<boolean> {
     return this.http.patch(`${this.url}/v1/user/1`,
       { user: params }, {
@@ -135,6 +148,20 @@ export class ApiProvider {
       }
     }).pipe(map((response) => {
       return response;
+    }), catchError((error: HttpErrorResponse) => {
+      return Observable.of(false);
+    }));
+
+  }
+
+  public deleteAdmin(personal_id): Observable<boolean> {
+    return this.http.request('delete', `${this.url}/v1/admin/1`, {
+      body: { personal_id },
+      headers: {
+        'Authorization': this.currentUser.token
+      }
+    }).pipe(map((response) => {
+      return true;
     }), catchError((error: HttpErrorResponse) => {
       return Observable.of(false);
     }));

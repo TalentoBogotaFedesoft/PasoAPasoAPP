@@ -26,7 +26,12 @@ export class ProfilePage {
   }
 
   private refreshProfile() {
+    const loading = this.loadingCtrl.create({
+      content: 'Cargando...'
+    });
+    loading.present();
     this.api.getUser().subscribe((response) => {
+      loading.dismiss();
       this.user = [
         { 'title': 'Nombre', 'note': response.name },
         { 'title': 'Correo', 'note': response.email },
@@ -67,7 +72,7 @@ export class ProfilePage {
               loading.dismiss();
               const toast = this.toastCtrl.create();
               if (status) {
-                toast.setMessage('Perfil actualizado!')
+                toast.setMessage('Perfil actualizado! El cambio se reflejara cuando vuelvas a iniciar sesión')
                 toast.setDuration(1000);
                 this.refreshProfile();
               } else {

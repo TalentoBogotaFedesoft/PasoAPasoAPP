@@ -1,3 +1,4 @@
+import { AdminsPage } from './../pages/admins/admins';
 import { ProfilePage } from './../pages/profile/profile';
 import { UserDashboardPage } from './../pages/user-dashboard/user-dashboard';
 import { RegisterUserPage } from './../pages/register-user/register-user';
@@ -26,7 +27,8 @@ import { RegisterAdminPage } from '../pages/register-admin/register-admin';
     RegisterUserPage,
     UserDashboardPage,
     ProfilePage,
-    RegisterAdminPage
+    RegisterAdminPage,
+    AdminsPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { RegisterAdminPage } from '../pages/register-admin/register-admin';
     RegisterUserPage,
     UserDashboardPage,
     ProfilePage,
-    RegisterAdminPage
+    RegisterAdminPage,
+    AdminsPage
   ],
   providers: [
     StatusBar,

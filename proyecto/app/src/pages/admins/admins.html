@@ -1,18 +1,51 @@
-<!--
-  Generated template for the AdminsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Admins</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador</ion-title>
   </ion-navbar>
 
 </ion-header>
+<ion-content>
+
+  <ion-card text-center>
+    <ion-item>
+      <ion-avatar text-center>
+        <ion-icon name="construct" style="margin: auto"></ion-icon>
+      </ion-avatar>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let item of user">
+        {{item.title}}
+        <ion-note item-end>
+          {{item.note}}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 
 
-<ion-content padding>
+  <ion-card *ngIf="authAdmin()">
+
+    <ion-card-content>
+    Como Administrador de sistema puede borrar la cuenta propia o de otros funcionarios. Manejar con responsabilidad.
+  </ion-card-content>
+
+    <button color="danger" ion-item (click)="delete()">
+      <ion-icon name="trash" item-start></ion-icon>
+      Eliminar cuenta
+    </button>
+  </ion-card>
+
+  <ion-card *ngIf="authAdmin()">
+    <button ion-item (click)="register()">
+      <ion-icon name="create" item-start></ion-icon>
+      Crear cuenta
+    </button>
+  </ion-card>
 
 </ion-content>

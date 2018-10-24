@@ -1,3 +1,4 @@
+import { AdminsPage } from './../admins/admins';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
@@ -26,10 +27,13 @@ export class AdminDashboardPage {
     }
   }
 
-  ionViewDidLoad() {
-
-
-    console.log('ionViewDidLoad AdminDashboardPage');
+  public openPage(page): void {
+    let pages = {'admins' : AdminsPage};
+    this.navCtrl.setRoot(pages[page]);
   }
+
+  ionViewCanEnter(){
+    return this.role? this.role !== 'user' : false;
+   }
 
 }

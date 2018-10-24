@@ -38,11 +38,7 @@ export class RegisterUserPage {
       credentialsForm: this.credentialsForm
     });
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterUserPage');
-  }
-
+  
   public register(): void {
 
     const params = {
