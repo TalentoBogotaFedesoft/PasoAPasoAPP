@@ -1,3 +1,4 @@
+import { BusesPage } from './../buses/buses';
 import { AdminsPage } from './../admins/admins';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -28,7 +29,7 @@ export class AdminDashboardPage {
   }
 
   public openPage(page): void {
-    let pages = {'admins' : AdminsPage};
+    let pages = {'admins' : AdminsPage, 'buses': BusesPage};
     this.navCtrl.setRoot(pages[page]);
   }
 

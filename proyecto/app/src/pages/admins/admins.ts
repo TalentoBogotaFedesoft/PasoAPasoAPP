@@ -1,7 +1,7 @@
 import { HomePage } from './../home/home';
 import { ApiProvider } from './../../providers/api/api';
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, AlertController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, AlertController, ToastController, Events } from 'ionic-angular';
 import { RegisterAdminPage } from '../register-admin/register-admin';
 
 @Component({
@@ -11,6 +11,7 @@ import { RegisterAdminPage } from '../register-admin/register-admin';
 export class AdminsPage {
   user: Array<any>;
   role: string;
+  id: string;
 
   constructor(
     public navCtrl: NavController,
@@ -18,7 +19,8 @@ export class AdminsPage {
     private api: ApiProvider,
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,
+    private events: Events) {
 
   }
 
@@ -40,6 +42,7 @@ export class AdminsPage {
         { 'title': 'Entidad', 'note': response.entity }
       ];
       this.role = response.role;
+      this.id = response.id;
     });
   }
 
@@ -82,8 +85,14 @@ export class AdminsPage {
               loading.dismiss();
               const toast = this.toastCtrl.create();
               if (status) {
-                this.api.logout();
-                this.navCtrl.setRoot(HomePage);
+                if (this.id === data.personal_id) {
+                  this.api.logout();
+                  this.events.publish('loggedOut');
+                  this.navCtrl.setRoot(HomePage);
+                } else {
+                  toast.setMessage('Usuario eliminado con éxito')
+                  toast.setDuration(3000);
+                }
               } else {
                 toast.setMessage('Se presento un error al eliminar la cuenta')
                 toast.setDuration(3000);

@@ -1,6 +1,5 @@
-import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { ProfilePage } from '../profile/profile';
 
@@ -18,9 +17,7 @@ export class UserDashboardPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private api: ApiProvider,
-    private alertCtrl: AlertController,
-    private modalCtrl: ModalController) {
+    private api: ApiProvider) {
 
     let data = this.api.getCurrentUser();
     console.log("paneluser " + data.email);

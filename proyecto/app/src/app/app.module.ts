@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { RegisterAdminPage } from '../pages/register-admin/register-admin';
+import { BusesPage } from '../pages/buses/buses';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterAdminPage } from '../pages/register-admin/register-admin';
     UserDashboardPage,
     ProfilePage,
     RegisterAdminPage,
-    AdminsPage
+    AdminsPage,
+    BusesPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { RegisterAdminPage } from '../pages/register-admin/register-admin';
     UserDashboardPage,
     ProfilePage,
     RegisterAdminPage,
-    AdminsPage
+    AdminsPage,
+    BusesPage
   ],
   providers: [
     StatusBar,

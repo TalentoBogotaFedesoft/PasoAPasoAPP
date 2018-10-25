@@ -1,3 +1,4 @@
+import { BusesPage } from './../pages/buses/buses';
 import { AdminsPage } from './../pages/admins/admins';
 import { AdminDashboardPage } from './../pages/admin-dashboard/admin-dashboard';
 import { HomePage } from './../pages/home/home';
@@ -9,7 +10,6 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterUserPage } from '../pages/register-user/register-user';
 import { ApiProvider } from '../providers/api/api';
 import { UserDashboardPage } from '../pages/user-dashboard/user-dashboard';
-import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -45,7 +45,7 @@ export class MyApp {
       this.nav.setRoot(AdminDashboardPage);
 
       this.pages = [
-        { title: 'Buses', component: LoginPage, icon: 'bus' },
+        { title: 'Buses', component: BusesPage, icon: 'bus' },
         { title: 'Rutas', component: LoginPage, icon: 'map' },
         { title: 'Estaciones', component: LoginPage, icon: 'cube' },
         { title: 'Administradores', component: AdminsPage, icon: 'contacts' },

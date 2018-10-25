@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Buses</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content>
+  
+    <ion-card text-center>
+      <ion-item>
+        <ion-avatar text-center>
+          <ion-icon name="construct" style="margin: auto"></ion-icon>
+        </ion-avatar>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card>
+      <ion-list>
+        <ion-item *ngFor="let bus of buses">
+          {{bus.code}}
+          <ion-note item-end>
+            {{bus.route}}
+          </ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  
+  
+  
+    <ion-card *ngIf="authAdmin()">
+      <button ion-item (click)="create()">
+        <ion-icon name="create" item-start></ion-icon>
+        Agregar bus
+      </button>
+    </ion-card>
+  
+  </ion-content>
