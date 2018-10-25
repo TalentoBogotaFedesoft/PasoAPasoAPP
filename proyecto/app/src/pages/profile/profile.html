@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Mi Perfil</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+
+    <ion-card text-center>
+        <ion-item>
+            <ion-avatar>
+                <img src="assets/imgs/logo.png" style="margin: auto">
+            </ion-avatar>
+        </ion-item>
+    </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let item of user">
+            {{item.title}}
+            <ion-note item-end>
+                {{item.note}}
+            </ion-note>
+        </ion-item>
+
+        <button ion-item (click)="updateUser()">
+                <ion-icon name="contact" item-start></ion-icon>
+                Actualizar mi perfil
+            </button>
+    </ion-list>
+   
+</ion-content>

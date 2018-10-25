@@ -1,3 +1,6 @@
+import { AdminsPage } from './../pages/admins/admins';
+import { ProfilePage } from './../pages/profile/profile';
+import { UserDashboardPage } from './../pages/user-dashboard/user-dashboard';
 import { RegisterUserPage } from './../pages/register-user/register-user';
 import { AdminDashboardPage } from './../pages/admin-dashboard/admin-dashboard';
 import { LoginPage } from './../pages/login/login';
@@ -12,31 +15,42 @@ import { HomePage } from '../pages/home/home';
 import { ApiProvider } from '../providers/api/api';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuPage } from '../pages/menu/menu';
+import { IonicStorageModule } from '@ionic/storage';
+import { RegisterAdminPage } from '../pages/register-admin/register-admin';
+import { BusesPage } from '../pages/buses/buses';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage,
     AdminDashboardPage,
-    RegisterUserPage
+    RegisterUserPage,
+    UserDashboardPage,
+    ProfilePage,
+    RegisterAdminPage,
+    AdminsPage,
+    BusesPage
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage,
     AdminDashboardPage,
-    RegisterUserPage
+    RegisterUserPage,
+    UserDashboardPage,
+    ProfilePage,
+    RegisterAdminPage,
+    AdminsPage,
+    BusesPage
   ],
   providers: [
     StatusBar,

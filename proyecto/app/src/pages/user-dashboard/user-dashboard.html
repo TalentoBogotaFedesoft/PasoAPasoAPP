@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+
+    <ion-item color="primary">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2>{{name}}</h2>
+      <h3>{{email}}</h3>
+    </ion-item>
+
+    <ion-card-content>
+      <button ion-item (click)="showProfile()">
+        <ion-icon name="contact" item-start></ion-icon>
+        Ver mi perfil
+      </button>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Administración
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="map" item-start></ion-icon>
+        Mis viajes
+      </button>
+
+      <button ion-item>
+        <ion-icon name="alarm" item-start></ion-icon>
+        Mis alertas
+      </button>
+
+      <button ion-item>
+        <ion-icon name="star" item-start></ion-icon>
+        Mis evaluaciones
+      </button>
+
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <button color="danger" ion-item>
+      <ion-icon name="trash" item-start></ion-icon>
+      Eliminar cuenta
+    </button>
+  </ion-card>
+
+
+</ion-content>

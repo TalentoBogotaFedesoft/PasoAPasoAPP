@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController, Events } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { RegisterUserPage } from '../register-user/register-user';
 
@@ -23,7 +23,8 @@ export class LoginPage {
     public navParams: NavParams,
     public api: ApiProvider,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    public events: Events) {
       this.admin = false;
   }
 
@@ -38,10 +39,13 @@ export class LoginPage {
     loading.present();
 
     let loginHandle :any;
+    let role: string;
     if (this.admin) {
       loginHandle = this.api.loginAdmin(params);
+      role = 'admin';
     } else {
       loginHandle = this.api.loginUser(params);
+      role = 'user';
     }
 
     loginHandle.subscribe((status) => {
@@ -52,7 +56,7 @@ export class LoginPage {
           duration: 1000
         })
         toast.present();
-        //this.navCtrl.push(dash);
+        this.events.publish(`${role}:loggedIn`);
       } else {
         const toast = this.toastCtrl.create({
           message: 'Correo o contraseña invalida',
