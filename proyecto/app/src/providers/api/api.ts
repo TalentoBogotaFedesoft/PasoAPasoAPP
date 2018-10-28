@@ -18,7 +18,7 @@ export class ApiProvider {
   private currentUser: User;
 
   constructor(public http: HttpClient, private storage: Storage) {
-    this.url = 'http://localhost:3000/api';
+    this.url = 'https://pasoapasoapp.herokuapp.com/api';
   }
 
   public loginAdmin(params): Observable<any> {
