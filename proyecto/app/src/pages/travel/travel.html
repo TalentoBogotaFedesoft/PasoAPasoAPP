@@ -1,11 +1,22 @@
 <ion-header>
 
   <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Viajar</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Viajar</ion-title>
   </ion-navbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Busca rutas por código ó nombre" [(ngModel)]="query" (ionInput)="searchRoute()"></ion-searchbar>
+  </ion-toolbar>
+
+  <ion-list>
+    <ion-item *ngFor="let route of routes" (click)="selectRoute(route)">
+      <b> {{route.code}} </b> -  {{route.name}}  <b>Destino:</b> {{route.destination}}
+    </ion-item>
+  </ion-list>
+
 
 </ion-header>
 

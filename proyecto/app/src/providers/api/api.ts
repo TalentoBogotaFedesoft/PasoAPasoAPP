@@ -176,5 +176,21 @@ export class ApiProvider {
     this.storage.set('user', this.currentUser);
   }
 
+  public getRoutes(): Observable<any> {
+    return this.http.get(`${this.url}/v1/route`).pipe(map((response) => {
+      return response;
+    }), catchError((error: HttpErrorResponse) => {
+      return Observable.of(false);
+    }));
+  }
+
+  public getRouteStops(route): Observable<any> {
+    return this.http.get(`${this.url}/v1/route/${route.id}/route_stop`).pipe(map((response) => {
+      return response;
+    }), catchError((error: HttpErrorResponse) => {
+      return Observable.of(false);
+    }));
+  }
+
 
 }
