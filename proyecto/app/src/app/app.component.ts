@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterUserPage } from '../pages/register-user/register-user';
 import { ApiProvider } from '../providers/api/api';
 import { UserDashboardPage } from '../pages/user-dashboard/user-dashboard';
+import { TravelPage } from '../pages/travel/travel';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +36,7 @@ export class MyApp {
     let defaultPages = [
       { title: 'Iniciar sesión', component: LoginPage, icon: 'log-in' },
       { title: 'Registrarse', component: RegisterUserPage, icon: 'create' },
-      { title: 'Empezar viaje', component: LoginPage, icon: 'navigate' },
+      { title: 'Empezar viaje', component: TravelPage, icon: 'navigate' },
     ];
 
     this.pages = defaultPages;
@@ -58,7 +59,7 @@ export class MyApp {
       this.nav.setRoot(UserDashboardPage);
 
       this.pages = [
-        { title: 'Empezar viaje', component: LoginPage, icon: 'navigate' },
+        { title: 'Empezar viaje', component: TravelPage, icon: 'navigate' },
         { title: 'Mis viajes', component: LoginPage, icon: 'map' },
         { title: 'Mis alertas', component: LoginPage, icon: 'alarm' },
         { title: 'Mis evaluaciones', component: LoginPage, icon: 'star' },

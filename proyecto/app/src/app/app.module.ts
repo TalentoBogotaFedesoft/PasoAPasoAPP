@@ -1,3 +1,4 @@
+import { TravelPage } from './../pages/travel/travel';
 import { AdminsPage } from './../pages/admins/admins';
 import { ProfilePage } from './../pages/profile/profile';
 import { UserDashboardPage } from './../pages/user-dashboard/user-dashboard';
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { RegisterAdminPage } from '../pages/register-admin/register-admin';
 import { BusesPage } from '../pages/buses/buses';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { BusesPage } from '../pages/buses/buses';
     ProfilePage,
     RegisterAdminPage,
     AdminsPage,
-    BusesPage
+    BusesPage,
+    TravelPage
   ],
   imports: [
     BrowserModule,
@@ -50,11 +53,13 @@ import { BusesPage } from '../pages/buses/buses';
     ProfilePage,
     RegisterAdminPage,
     AdminsPage,
-    BusesPage
+    BusesPage,
+    TravelPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider
   ]

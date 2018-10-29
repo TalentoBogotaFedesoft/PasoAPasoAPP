@@ -18,8 +18,9 @@
       <h2>Hola!</h2>
       <p><b> Paso a paso</b> es una aplicación diseñada para cambiar la forma en que te transportas en la ciudad de
         Bogotá.</p>
-      <button ion-button block>Empezar viaje</button>
-      <button ion-button block>Iniciar sesión</button>
+        <button ion-button block *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
 
     </ion-slide>
 

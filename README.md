@@ -25,8 +25,6 @@ Utilizando Paso a Paso no solo mejora tu movilidad sino la de toda la ciudad:
 > Se proveerán de las estadísticas recaudadas a los operadores de rutas con el fin de que aumenten la frecuencia de buses. 
 
 
-Paso a Paso fue diseñada y desarrollada en el marco del proyecto de formación de Piensa Digital, una iniciativa del Ministerio Tic y Colciencias, con el respaldo de Fedesoft.
-
 ### Temática: Movilidad. 
 ### Reto: Recurrencia de rutas de transporte. Localidad: Usaquén. 
 
@@ -49,6 +47,8 @@ Paso a paso utiliza en su mayor parte tecnologías open source/código abierto p
 * [Twitter Bootstrap] - Frontend de la página web. 
 * [Ruby on rails] - API del Backend.
 * [PostgreSQL] - Base de datos.
+* [OpenStreetMaps] - Mapas.
+* [Leaflet] - Mapas interactivos.
 
 
 [//]: # 
@@ -57,4 +57,6 @@ Paso a paso utiliza en su mayor parte tecnologías open source/código abierto p
     [PostgreSQL]: <https://www.postgresql.org/>
     [Ruby on rails]: <https://rubyonrails.org/>
     [Ionic]: <https://ionicframework.com/>
+    [Leaflet]: <https://leafletjs.com/>
+    [OpenStreetMaps]: <https://www.openstreetmap.org>
 
