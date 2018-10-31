@@ -1,7 +1,8 @@
 import { ApiProvider } from './../../providers/api/api';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import leaflet from 'leaflet';
+import 'leaflet-routing-machine';
 import { Geolocation } from '@ionic-native/geolocation';
 
 
@@ -20,7 +21,8 @@ export class TravelPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private geolocation: Geolocation,
-    private api: ApiProvider) {
+    private api: ApiProvider,
+    public loadingCtrl: LoadingController) {
     this.initializeRoutes();
   }
 
@@ -39,7 +41,6 @@ export class TravelPage {
       setView: true,
       maxZoom: 15
     }).on('locationfound', (e) => {
-      console.log('found you');
     })
   }
 
@@ -47,7 +48,6 @@ export class TravelPage {
     this.api.getRoutes().subscribe(response => {
       if (response) {
         this.defRoutes = response.routes;
-        console.log(response.routes);
       } else {
         console.log('something failed in init routes');
       }
@@ -56,7 +56,6 @@ export class TravelPage {
 
   public searchRoute() {
     this.routes = this.defRoutes;
-    console.log(this.query);
     if (this.query && this.query.trim() != '') {
       this.routes = this.routes.filter((route) => {
         return (route.code.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
@@ -66,12 +65,29 @@ export class TravelPage {
   }
 
   public selectRoute(route) {
-    console.log('ruta elegida ' + route);
 
+    this.query = `${route.code} ${route.name} - Destino: ${route.destination}`;
+
+    const loading = this.loadingCtrl.create({
+      content: 'Cargando...'
+    });
+    loading.present();
+
+    let waypoints = [];
     this.api.getRouteStops(route).subscribe(response => {
-      if(response) {
-        console.log(response.stops);
-        leaflet.marker([4.635539, -74.115545]).addTo(this.map);
+      if (response) {
+        response.stops.forEach((stop) => {
+          waypoints.push([stop.latitude, stop.longitude]);
+          leaflet.marker([stop.latitude, stop.longitude]);
+        });
+
+        let control = leaflet.Routing.control({
+          waypoints: waypoints
+        }).addTo(this.map);
+
+        control.hide();
+        loading.dismiss();
+        this.map.fitBounds(waypoints);
       }
     })
 

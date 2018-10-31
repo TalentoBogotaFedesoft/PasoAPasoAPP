@@ -2,4 +2,8 @@ page-travel {
     ion-list {
         margin: 0 !important;
     }
+    
+    .leaflet-control-container .leaflet-routing-container-hide {
+        display: none;
+    }
 }

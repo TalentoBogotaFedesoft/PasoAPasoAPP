@@ -20,7 +20,6 @@ export class UserDashboardPage {
     private api: ApiProvider) {
 
     let data = this.api.getCurrentUser();
-    console.log("paneluser " + data.email);
     if (data) {
       this.name = data.name;
         this.email = data.email;

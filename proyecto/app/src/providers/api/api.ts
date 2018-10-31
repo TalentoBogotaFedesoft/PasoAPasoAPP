@@ -172,7 +172,6 @@ export class ApiProvider {
     this.currentUser.name = name;
     this.currentUser.role = role;
     this.currentUser.email = email;
-    console.log('user saved');
     this.storage.set('user', this.currentUser);
   }
 
