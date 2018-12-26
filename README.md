@@ -16,28 +16,6 @@ Paso a paso te permite:
 - Alertas para rutas guardadas/frecuentes
 > ¿Utilizas siempre la misma ruta para ir al trabajo? Dile a Paso a Paso a que hora vas a salir y se generará una alerta para que salgas a tiempo a tomar el bus más cercano a esa hora.
 
-Utilizando Paso a Paso no solo mejora tu movilidad sino la de toda la ciudad:
-
-- Recolección de estadísticas: Rutas más concurridas
-> A través de la retroalimentación de los usuarios sobre su percepción de la frecuencia de la rutas, se generarán estadísticas de las rutas.
-
--  Interacción con operadores de rutas
-> Se proveerán de las estadísticas recaudadas a los operadores de rutas con el fin de que aumenten la frecuencia de buses. 
-
-
-### Temática: Movilidad. 
-### Reto: Recurrencia de rutas de transporte. Localidad: Usaquén. 
-
-## Desarrollado/Diseñado por: 
-- Ana María Rodríguez Reyes
-> Ingeniera de Sistemas y Computación.
-> :octocat: Perfil Github: [anmrdz]
-
-
-
-## Alcance :rocket:
- Diseñar un primer prototipo en el cual se pueda ver por medio de rutas simuladas la funcionalidad básica de la aplicación. 
-
 
 ## Tecnologías
 
